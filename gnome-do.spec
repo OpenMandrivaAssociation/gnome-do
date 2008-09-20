@@ -1,5 +1,5 @@
 Name:			gnome-do
-Version:		0.5.0.1   
+Version:		0.6.0.1
 Release:		%mkrel 1
 Summary:		Quick launch and search
 
@@ -7,8 +7,6 @@ License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/trunk/0.5/+download/%{name}-%{version}.tar.gz
-# keyring's .pc file has been renamed in latest release
-Patch0:			%{name}-0.5.0.1-keyring.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:		mono-devel mono-addins
@@ -18,6 +16,7 @@ BuildRequires:		ndesk-dbus-glib
 BuildRequires:		gtk-sharp2-devel
 BuildRequires:		gnome-sharp2-devel, gnome-desktop-sharp-devel
 BuildRequires:		gnome-keyring-sharp
+BuildRequires:		notify-sharp
 BuildRequires:		gettext
 BuildRequires:		perl-XML-Parser
 BuildRequires:		intltool
@@ -29,8 +28,7 @@ GNOME desktop environment and perform commonly used commands
 on those objects
 
 %prep
-%setup -q
-%patch0 -p1 -b .keyring
+%setup -q -n %{name}-0.6.0.0
 
 
 %build
