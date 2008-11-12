@@ -1,12 +1,12 @@
 Name:			gnome-do
-Version:		0.6.0.1
+Version:		0.6.1.0
 Release:		%mkrel 1
 Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
-Source0:		http://launchpad.net/do/trunk/0.5/+download/%{name}-%{version}.tar.gz
+Source0:		http://launchpad.net/do/0.6/0.6.1/+download/%{name}-%{version}.tar.gz
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:		mono-devel mono-addins
@@ -28,7 +28,7 @@ GNOME desktop environment and perform commonly used commands
 on those objects
 
 %prep
-%setup -q -n %{name}-0.6.0.0
+%setup -q 
 
 
 %build
@@ -53,8 +53,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING COPYRIGHT
+%{_sysconfdir}/gconf/schemas/*.schemas
 %{_bindir}/*
 %{_libdir}/gnome-do
+%{_datadir}/icons/hicolor/*/*/*.png
+%{_datadir}/icons/hicolor/*/*/*.svg
 %config(noreplace) %{_sysconfdir}/xdg/autostart/gnome-do.desktop
 %{_libdir}/pkgconfig/*
 
