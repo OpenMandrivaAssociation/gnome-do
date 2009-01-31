@@ -1,5 +1,5 @@
 Name:			gnome-do
-Version:		0.6.1.0
+Version:		0.8.0
 Release:		%mkrel 1
 Summary:		Quick launch and search
 
