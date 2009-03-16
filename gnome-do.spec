@@ -1,6 +1,6 @@
 Name:			gnome-do
 Version:		0.8.1
-Release:		%mkrel 1
+Release:		%mkrel 2
 Summary:		Quick launch and search
 
 License:		GPLv3+
@@ -8,7 +8,7 @@ Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
-
+Suggests:		gnome-do-plugins >= 0.8
 BuildRequires:		mono-devel mono-addins
 BuildRequires:		desktop-file-utils
 BuildRequires:		ndesk-dbus
