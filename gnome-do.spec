@@ -1,12 +1,14 @@
 Name:			gnome-do
 Version:		0.8.1.3
-Release:		%mkrel 1
+Release:		%mkrel 2
 Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
+# (fc) 0.8.1.3-2mdv fix application path (Fedora)
+Patch0:			gnome-do-0.8.1.3-applicationspath.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
 BuildRequires:		mono-devel mono-addins
@@ -29,6 +31,7 @@ on those objects
 
 %prep
 %setup -q 
+%patch0 -p1 -b .applicationspath
 
 
 %build
@@ -40,7 +43,7 @@ on those objects
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-desktop-file-install --vendor gnome --delete-original		\
+desktop-file-install --vendor gnome \
 	--dir $RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart	\
 	--add-only-show-in=GNOME				\
 	$RPM_BUILD_ROOT%{_datadir}/applications/gnome-do.desktop
@@ -58,5 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gnome-do
 %{_datadir}/gnome-do
 %{_datadir}/icons/hicolor/*/*/*
-%config(noreplace) %{_sysconfdir}/xdg/autostart/gnome-do.desktop
+%{_datadir}/applications/gnome-do.desktop
+%config(noreplace) %{_sysconfdir}/xdg/autostart/*.desktop
 %{_libdir}/pkgconfig/*
