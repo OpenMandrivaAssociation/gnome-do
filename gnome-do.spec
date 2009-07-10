@@ -1,14 +1,12 @@
 Name:			gnome-do
-Version:		0.8.1.3
-Release:		%mkrel 2
+Version:		0.8.2
+Release:		%mkrel 1
 Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
-# (fc) 0.8.1.3-2mdv fix application path (Fedora)
-Patch0:			gnome-do-0.8.1.3-applicationspath.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
 BuildRequires:		mono-devel mono-addins
@@ -31,8 +29,6 @@ on those objects
 
 %prep
 %setup -q 
-%patch0 -p1 -b .applicationspath
-
 
 %build
 %configure2_5x
