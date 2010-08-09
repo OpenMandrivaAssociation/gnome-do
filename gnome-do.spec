@@ -15,7 +15,7 @@ BuildRequires:		ndesk-dbus-glib-devel
 BuildRequires:		gtk-sharp2-devel
 BuildRequires:		gnome-sharp2-devel, gnome-desktop-sharp-devel
 BuildRequires:		gnome-keyring-sharp
-BuildRequires:		notify-sharp
+BuildRequires:		notify-sharp-devel
 BuildRequires:		gettext
 BuildRequires:		intltool
 BuildRequires:		gtk2-devel
