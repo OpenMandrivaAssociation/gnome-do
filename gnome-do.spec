@@ -9,7 +9,7 @@ URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
-BuildRequires:		mono-devel mono-addins
+BuildRequires:		mono-addins-devel
 BuildRequires:		desktop-file-utils
 BuildRequires:		ndesk-dbus-glib-devel
 BuildRequires:		gtk-sharp2-devel
