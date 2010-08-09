@@ -11,14 +11,12 @@ BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
 BuildRequires:		mono-devel mono-addins
 BuildRequires:		desktop-file-utils
-BuildRequires:		ndesk-dbus
-BuildRequires:		ndesk-dbus-glib
+BuildRequires:		ndesk-dbus-glib-devel
 BuildRequires:		gtk-sharp2-devel
 BuildRequires:		gnome-sharp2-devel, gnome-desktop-sharp-devel
 BuildRequires:		gnome-keyring-sharp
 BuildRequires:		notify-sharp
 BuildRequires:		gettext
-BuildRequires:		perl-XML-Parser
 BuildRequires:		intltool
 BuildRequires:		gtk2-devel
 
