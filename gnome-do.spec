@@ -1,12 +1,14 @@
 Name:			gnome-do
 Version:		0.8.3.1
-Release:		%mkrel 1
+Release:		%mkrel 2
 Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
+Patch0:			gnome-do-0.8.3.1-mono-2.8.patch
+Patch1:			gnome-do-0.8.3.1-gdk.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
 BuildRequires:		mono-addins-devel
@@ -26,12 +28,13 @@ GNOME desktop environment and perform commonly used commands
 on those objects
 
 %prep
-%setup -q 
+%setup -q
+%patch0 -p0
+%patch1 -p0
 
 %build
-%configure2_5x
-%make 
-
+%configure2_5x --disable-schemas-install
+%make
 
 %install
 rm -rf $RPM_BUILD_ROOT
