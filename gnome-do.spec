@@ -1,13 +1,13 @@
 Name:			gnome-do
-Version:		0.8.3.1
-Release:		%mkrel 2
+Version:		0.8.4
+Release:		%mkrel 1
 Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
 URL:			http://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
-Patch0:			gnome-do-0.8.3.1-mono-2.8.patch
+Patch0:			gnome-do-0.8.4-mono-2.8.patch
 Patch1:			gnome-do-0.8.3.1-gdk.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
@@ -40,11 +40,6 @@ on those objects
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-desktop-file-install --vendor gnome \
-	--dir $RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart	\
-	--add-only-show-in=GNOME				\
-	$RPM_BUILD_ROOT%{_datadir}/applications/gnome-do.desktop
-
 %find_lang %{name}
 
 %clean
@@ -56,8 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*.schemas
 %{_bindir}/*
 %{_libdir}/gnome-do
-%{_datadir}/gnome-do
-%{_datadir}/icons/hicolor/*/*/*
+%{_iconsdir}/hicolor/*/*/*
+%{_sysconfdir}/xdg/autostart/*.desktop
 %{_datadir}/applications/gnome-do.desktop
-%config(noreplace) %{_sysconfdir}/xdg/autostart/*.desktop
 %{_libdir}/pkgconfig/*
