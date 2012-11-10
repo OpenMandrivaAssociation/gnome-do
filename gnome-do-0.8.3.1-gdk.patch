@@ -1,0 +1,20 @@
+--- libdo/Makefile.am.build	2010-10-24 17:07:58.000000000 +0200
++++ libdo/Makefile.am	2010-10-24 17:08:08.000000000 +0200
+@@ -3,7 +3,6 @@
+ AM_CFLAGS = -DG_LOG_DOMAIN=\"libdo\"	\
+ 	    -DEGG_COMPILATION 		\
+ 	    -DGTK_DISABLE_DEPRECATED 	\
+-	    -DGDK_DISABLE_DEPRECATED 	\
+ 	    -DG_DISABLE_DEPRECATED	\
+ 	    $(LIBDO_CFLAGS)
+ 
+--- libdo/Makefile.in.build	2010-10-24 17:08:28.000000000 +0200
++++ libdo/Makefile.in	2010-10-24 17:08:54.000000000 +0200
+@@ -281,7 +281,6 @@
+ AM_CFLAGS = -DG_LOG_DOMAIN=\"libdo\"	\
+ 	    -DEGG_COMPILATION 		\
+ 	    -DGTK_DISABLE_DEPRECATED 	\
+-	    -DGDK_DISABLE_DEPRECATED 	\
+ 	    -DG_DISABLE_DEPRECATED	\
+ 	    $(LIBDO_CFLAGS)
+ 
