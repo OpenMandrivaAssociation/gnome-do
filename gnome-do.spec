@@ -5,7 +5,7 @@ Summary:		Quick launch and search
 
 License:		GPLv3+
 Group:			Graphical desktop/GNOME
-URL:			http://do.davebsd.com/
+URL:			https://do.davebsd.com/
 Source0:		http://launchpad.net/do/0.8/%version/+download/%name-%version.tar.gz
 Patch0:			gnome-do-0.8.4-mono-2.8.patch
 Patch1:			gnome-do-0.8.3.1-gdk.patch
