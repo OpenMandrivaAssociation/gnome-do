@@ -11,6 +11,11 @@ Patch0:			gnome-do-0.8.4-mono-2.8.patch
 Patch1:			gnome-do-0.8.3.1-gdk.patch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-root
 Suggests:		gnome-do-plugins >= 0.8
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:		mono-addins-devel
 BuildRequires:		desktop-file-utils
 BuildRequires:		ndesk-dbus-glib-devel
