@@ -1,6 +1,6 @@
 Name:			gnome-do
 Version:		0.8.4
-Release:		%mkrel 1
+Release:		2
 Summary:		Quick launch and search
 
 License:		GPLv3+
